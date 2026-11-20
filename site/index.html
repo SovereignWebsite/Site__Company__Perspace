@@ -5,14 +5,29 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Perspace: private preview</title>
 <meta name="description" content="A private preview. Scan, paste or drop the QR code you were given to open it.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Perspace">
+<meta property="og:locale" content="en_GB">
+<meta property="og:url" content="https://perspace.company.sovereignweb.site/">
+<meta property="og:title" content="Perspace: private preview">
+<meta property="og:description" content="A private preview. Scan, paste or drop the QR code you were given to open it.">
+<meta property="og:image" content="https://perspace.company.sovereignweb.site/assets/share/card-1200x630.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Perspace: a private preview">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Perspace: private preview">
+<meta name="twitter:description" content="A private preview. Scan, paste or drop the QR code you were given to open it.">
+<meta name="twitter:image" content="https://perspace.company.sovereignweb.site/assets/share/card-1200x630.jpg">
 <meta name="robots" content="noindex, nofollow">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; frame-src 'self' about: data:; connect-src 'self'; object-src 'none'; base-uri 'none'">
 <meta name="referrer" content="no-referrer">
 <script>try { if (/key=/.test(location.hash) || localStorage.getItem('sv-saved:' + location.pathname)) document.documentElement.classList.add('loading'); } catch (e) {}</script>
 <!-- A gated holding page (SovereignWebsite__Vault docs/gated-site.md). The site's agent gives it the site's own design and sets data-vault-zip once the vault is sealed. -->
 <style>
-:root{--bg:#f6f1ea;--fg:#2d2621;--muted:#6b5f55;--accent:#a0522d;--line:#e2d8cc;--card:#fffaf4;--bad:#a3261b}
-@media (prefers-color-scheme:dark){:root{--bg:#1b1714;--fg:#f1e9df;--muted:#b9ab9d;--accent:#e08a5b;--line:#3a312a;--card:#231e1a;--bad:#ff8a7a}}
+:root{--bg:#F6F7F2;--fg:#0D1C2C;--muted:#4E5963;--accent:#2F6B7C;--line:#A9BBC5;--card:#fff;--bad:#9C3F35}
+@media (prefers-color-scheme:dark){:root{--bg:#0D1C2C;--fg:#EEF1EC;--muted:#A9BBC5;--accent:#6FA8B8;--line:#2e475d;--card:#132638;--bad:#e8968c}}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:18px/1.6 Georgia,serif}
 main{max-width:40rem;margin:0 auto;padding:12vh 1rem 4rem;text-align:center}
 .mark{font:600 .8rem/1 system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
@@ -32,9 +47,46 @@ footer{margin-top:3rem;font:.8rem system-ui,sans-serif;color:var(--muted)}a{colo
 .spin{width:2.4rem;height:2.4rem;border:3px solid var(--line);border-top-color:var(--accent);border-radius:50%;animation:spin .9s linear infinite}
 @keyframes spin{to{transform:rotate(360deg)}}@media (prefers-reduced-motion:reduce){.spin{animation:none}}
 #dropping{z-index:10;border:4px dashed var(--accent)}.dropping #dropping{display:flex}#dropping p,#loading p{font-size:1.2rem;color:var(--fg);margin:0}
+/* The Sovereign Website credit on a customer's site: one small, muted control at the far top right that opens a
+   pop-up menu of the family links. Not a strip and not a menu bar: the site is about its owner (Dinis, 20 November
+   2026: "It needs to fundamentally be about the site and who is it about ... top right pop-up menu").
+   CSS only (details/summary), so no script and no CSP issue. It sits in the page's corner, above the owner's header;
+   a site whose own header uses that corner moves it with --family-top / --family-right.
+   To remove it, the owner sets one attribute: <html data-family-credit="off">. */
+.family-credit{--fam-fg:var(--family-fg,#5a5a5a);--fam-strong:var(--family-fg-strong,#111);--fam-bg:var(--family-bg,#fff);
+  position:absolute;top:var(--family-top,.4rem);right:var(--family-right,.75rem);z-index:50;font-size:.75rem;line-height:1.4}
+@media (prefers-color-scheme:dark){.family-credit{--fam-fg:var(--family-fg,#b5b5b5);--fam-strong:var(--family-fg-strong,#fff);--fam-bg:var(--family-bg,#1c1c1c)}}
+.family-credit summary{display:inline-flex;align-items:center;gap:.3rem;cursor:pointer;color:var(--fam-fg);list-style:none;min-height:24px;padding:.15rem .3rem;border-radius:4px}
+.family-credit summary::-webkit-details-marker{display:none}
+.family-credit summary::after{content:"";width:.35rem;height:.35rem;border:solid currentColor;border-width:0 1px 1px 0;transform:rotate(45deg) translateY(-2px)}
+.family-credit summary:hover,.family-credit summary:focus-visible,.family-credit[open] summary{color:var(--fam-strong)}
+.family-credit ul{position:absolute;right:0;top:100%;margin:.25rem 0 0;padding:.35rem 0;list-style:none;min-width:11rem;
+  background:var(--fam-bg);border:1px solid rgba(127,127,127,.3);border-radius:6px;box-shadow:0 4px 16px rgba(0,0,0,.12)}
+.family-credit a{display:block;padding:.3rem .8rem;min-height:24px;color:var(--fam-fg);text-decoration:none}
+.family-credit a:hover,.family-credit a:focus-visible{color:var(--fam-strong);background:rgba(127,127,127,.1)}
+.family-credit .family-gap{border-bottom:1px solid rgba(127,127,127,.25);padding-bottom:.3rem;margin-bottom:.3rem}
+[data-family-credit="off"] .family-credit{display:none}
+@media print{.family-credit{display:none}}
 </style>
 </head>
 <body>
+<details class="family-credit">
+  <summary>Sovereign Website</summary>
+  <ul>
+    <li><a href="/start/">Start here</a></li>
+    <li><a href="/agents/">Use with your AI</a></li>
+    <li class="family-gap"><a href="/admin/">How this site was made</a></li>
+    <li><a href="https://sovereignwebsite.ai/">Sovereign Website</a></li>
+    <li><a href="https://sovereignwebsite.org/">Principles</a></li>
+    <li><a href="https://sovereignwebsite.site/">Hosted</a></li>
+    <li><a href="https://hub.sovereignweb.site/">Hub</a></li>
+    <li><a href="https://agents.sovereignweb.site/">Agents</a></li>
+    <li><a href="https://vault.sovereignwebsite.site/">Vault</a></li>
+    <li><a href="https://agenticcells.ai/">AgentiCCells</a></li>
+    <li><a href="https://riskmandate.ai/">RiskMandate</a></li>
+    <li><a href="https://newsroom.sgit.ai/">Newsroom</a></li>
+  </ul>
+</details>
 <main>
 <div class="mark">Private preview</div>
 <h1>Perspace</h1>

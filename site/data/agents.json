@@ -1,0 +1,14 @@
+{
+ "site": "https://perspace.company.sovereignweb.site/",
+ "repository": "https://github.com/SovereignWebsite/Site__Company__Perspace",
+ "made_by": "https://github.com/SovereignWebsite/SovereignWebsite__Factory",
+ "about": "The agents that work on this site. Each site agent adds its own entry: its name (role@project.person), its role and its session. Their keys are published at https://agents.sovereignweb.site/.",
+ "agents": [
+  {
+   "name": "perspace.b@SovereignWebsite.dinis",
+   "role": "Builds the gated site for Perspace and its sealed vault, in this repository only.",
+   "session": "https://claude.ai/code/session_01Kw9UwBNR3HRCgQvWc6xW3T",
+   "signing_fingerprint": "sha256:6cb89ac625d51087"
+  }
+ ]
+}
