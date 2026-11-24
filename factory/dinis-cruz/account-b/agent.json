@@ -1,0 +1,24 @@
+{
+  "v": 1,
+  "agent": "perspace.b@SovereignWebsite.dinis",
+  "owner": "dinis-cruz",
+  "account": "B",
+  "role": "Keeper of the gated Perspace site: research, build, seal into a private vault, hand the key over, keep it live.",
+  "session": "https://claude.ai/code/session_01Kw9UwBNR3HRCgQvWc6xW3T",
+  "created_by": "sites.b, at Dinis Cruz's request",
+  "maestro": "b.maestro",
+  "key": {
+    "label": "perspace.b@SovereignWebsite.dinis",
+    "fingerprint": "sha256:a1742fb5062775ba",
+    "signing_fingerprint": "sha256:6cb89ac625d51087",
+    "public_bundle": "keys/perspace.b.json",
+    "listed_in": "SovereignWebsite__IaC team/keys.json"
+  },
+  "repository": "SovereignWebsite/Site__Company__Perspace",
+  "branch": "dev",
+  "site": "https://perspace.company.sovereignweb.site/",
+  "area_rule": "2026-11-24__gated-site-areas: outside site/, never served, own state only",
+  "status": "active, waiting for work or Dinis's feedback",
+  "updated": "2026-11-24T02:15Z",
+  "active_until": "2026-12-01T00:00:00Z"
+}
