@@ -2,7 +2,7 @@
 
 For a fresh session started with this repository and one line pointing here.
 
-1. Read /CLAUDE.md, then this folder: agent.json, role.md, decisions.md, open-work.md, learnings.md, restart.md.
+1. Read /CLAUDE.md, then this folder: now.md, agent.json, role.md, decisions.md, open-work.md, learnings.md, restart.md.
 2. Read https://decisions.agents.sovereignweb.site/how-it-works/ in full.
 3. Make your key (restart.md), set git signing to it in this repository, and check one commit signs with it before anything else.
 4. Update agent.json: session, key, updated, active_until (at most 7 days ahead).

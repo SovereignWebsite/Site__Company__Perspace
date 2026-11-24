@@ -18,7 +18,9 @@
   "branch": "dev",
   "site": "https://perspace.company.sovereignweb.site/",
   "area_rule": "2026-11-24__gated-site-areas: outside site/, never served, own state only",
-  "status": "active, waiting for work or Dinis's feedback",
-  "updated": "2026-11-24T02:15Z",
-  "active_until": "2026-12-01T00:00:00Z"
+  "status": "active, idle: no open work",
+  "updated": "2026-11-24T13:23Z",
+  "active_until": "2026-12-01T00:00:00Z",
+  "waiting_on": "nothing",
+  "area_note": "Kept here, outside site/, by signed record 2026-11-24__gated-site-areas, not on an agent site under site/factory/ as the 24 Nov guidance describes; see now.md."
 }
